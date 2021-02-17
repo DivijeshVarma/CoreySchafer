@@ -17,7 +17,7 @@ name = 'divi'
 message1 = f"{greetings}, {name.title()}. welcome"
 print(message1)
 
-# prqint(dir(name))
+# print(dir(name))
 # it will show all attributes and methods we have access to with that variable
 # description of methods do
 # print(help(str))
