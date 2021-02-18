@@ -1,5 +1,5 @@
 # Tuple
-# we can't modify tuples 
+# we can't modify tuples
 # lists are mutable and tuples are immutable
 
 tuple1 = ('c', 'c++', 'java', 'python')
