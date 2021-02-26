@@ -1,5 +1,4 @@
 import re
-from typing import Match
 
 text_to_search = '''
 abcdefghijklmnopqurtuvwxyz
