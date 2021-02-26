@@ -27,11 +27,15 @@ coreyms.com
 123*555*1234
 800-555-1234
 900-555-1234
+900*555*1234
 Mr. Schafer
 Mr Smith
 Ms Davis
 Mrs. Robinson
 Mr. T
+cat
+mat
+bat
 '''
 
 sentence = 'Start a sentence and then bring it to an end'
@@ -55,17 +59,34 @@ matches2 = pattern.finditer(sentence)
 for match in matches2:
     print(match)
 
-pattern3 = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')
-# matches3 = pattern3.finditer(text_to_search)
+# pattern3 = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')
+# to match only - or .
+# pattern3 = re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d\d')
+# to match only 800 or 900
+pattern3 = re.compile(r'[89]00[-.]\d\d\d[-.]\d\d\d\d')
 
-# for match in matches3:
-    # print(match)
+matches3 = pattern3.finditer(text_to_search)
+
+for match in matches3:
+    print(match)
 
 #########################
 
-with open('DataRE', 'r') as f:
-    content = f.read()
+# with open('DataRE', 'r') as f:
+#     content = f.read()
 
-    matches = pattern3.finditer(content)
-    for match in matches:
-        print(match)
+#     matches = pattern3.finditer(content)
+#     for match in matches:
+#         print(match)
+
+# to search ranges
+
+# pattern4 = re.compile(r'[1-2]')
+
+# carat negates character set only b character
+pattern4 = re.compile(r'[^b]at')
+
+matches4 = pattern4.finditer(text_to_search)
+
+for match in matches4:
+    print(match)
