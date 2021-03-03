@@ -1,3 +1,8 @@
+# First class functions allow us to treat functions like
+# any other object, i.e we can pass functions as argument
+# to another function and returns functions, assign functions
+# to variables.
+
 def square(x):
     return x * x
 
