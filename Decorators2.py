@@ -74,3 +74,43 @@ def display_info(name, age):
 
 display()
 display_info('divi', 27)
+
+
+print('--------------------------------')
+
+
+##################################
+def decorator_func(func):
+    def wrapper_func(*args, **kwargs):
+        print(f"wrapper executed before {func.__name__}")
+        func(*args, **kwargs)
+        print(f"wrapper executed after {func.__name__}")
+    return wrapper_func
+
+
+@decorator_func
+def display_info(name, age):
+    print(f"display function with {name} and {age}")
+
+
+display_info('divijesh', 27)
+print('--------------------------------')
+
+
+####################################
+def prefix_decorator(prefix):
+    def decorator_func(func):
+        def wrapper_func(*args, **kwargs):
+            print(f"{prefix} wrapper executed before {func.__name__}")
+            func(*args, **kwargs)
+            print(f"{prefix} wrapper executed after {func.__name__}")
+        return wrapper_func
+    return decorator_func
+
+
+@prefix_decorator('LOG:')
+def display_info(name, age):
+    print(f"display function with {name} and {age}")
+
+
+display_info('divijesh', 27)
