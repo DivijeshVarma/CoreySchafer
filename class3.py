@@ -41,3 +41,44 @@ print(course.students[0].name)
 
 print(course.add_students(s3))
 print(course.get_avg_grade())
+
+
+# inheritance cat class inherits properties of Pet class
+
+class Pet:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def show(self):
+        print(f"pet name is {self.name} and age is {self.age}")
+
+
+class Dog(Pet):
+    def __init__(self, name, age, color):
+        super().__init__(name, age)
+        self.color = color
+
+    def bark(self):
+        print("bark")
+
+    def show(self):
+        print(f"pet name is {self.name} and age is {self.age} and {self.color}")
+
+
+class Cat(Pet):
+    def meow(self):
+        print("meow")
+
+
+p = Pet('gray', 14)
+p.show()
+
+c = Cat('cray', 10)
+c.show()
+c.meow()
+
+d = Dog('drak', 16, 'blue')
+d.bark()
+d.show()
