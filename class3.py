@@ -64,7 +64,8 @@ class Dog(Pet):
         print("bark")
 
     def show(self):
-        print(f"pet name is {self.name} and age is {self.age} and {self.color}")
+        print(f"pet name is {self.name} and age is {self.age}\
+              and {self.color}")
 
 
 class Cat(Pet):
